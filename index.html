@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kevins Mobile RV Repair LLC — Mobile RV Repair in Bethany, OK</title>
+  <meta name="description" content="Kevins Mobile RV Repair LLC — Mobile RV repair, service calls, and maintenance in Bethany, OK. Call Kevin: +1 (405) 965-7511." />
+  <meta name="theme-color" content="#0B5FFF" />
+
+  <!-- Basic styling: professional, accessible palette -->
+  <style>
+    :root{
+      --brand:#0B5FFF; /* vivid blue */
+      --accent:#0f766e; /* teal */
+      --muted:#6b7280; /* gray */
+      --bg:#f7fafc; /* very light */
+      --card:#ffffff;
+      --max-width:1100px;
+      --radius:12px;
+      --shadow: 0 6px 22px rgba(13, 30, 60, 0.08);
+      --star-color: #f5b301;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,var(--bg),#eef2ff);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:28px;
+      display:flex;
+      justify-content:center;
+      font-size:16px;
+    }
+
+    .site{
+      width:100%;
+      max-width:var(--max-width);
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:20px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .logo {
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      background:linear-gradient(180deg,var(--brand),#0647d6);
+      box-shadow:var(--shadow);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#fff;
+      font-weight:700;
+      font-size:20px;
+      letter-spacing:0.4px;
+    }
+    h1{margin:0;font-size:1.4rem}
+    .top-contact{
+      text-align:right;
+    }
+    .phone{
+      display:block;
+      font-weight:700;
+      color:var(--brand);
+      text-decoration:none;
+      font-size:1.05rem;
+      margin-bottom:6px;
+    }
+    .phone small{display:block;font-weight:400;color:var(--muted);font-size:0.85rem}
+
+    main{
+      display:grid;
+      grid-template-columns: 1fr 380px;
+      gap:20px;
+      align-items:start;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+    }
+
+    .lead{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+    }
+    .cta{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:10px 14px;
+      border-radius:9px;
+      background:var(--brand);
+      color:white;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow:0 6px 18px rgba(11,95,255,0.18);
+    }
+
+    .muted{color:var(--muted)}
+    address{font-style:normal; color:var(--muted)}
+    .hours-list{margin:8px 0 0 0;padding:0;font-size:0.95rem}
+    .hours-list li{list-style:none;padding:4px 0}
+
+    /* Map */
+    .mapframe{
+      width:100%;
+      height:320px;
+      border:0;
+      border-radius:10px;
+      overflow:hidden;
+    }
+
+    /* Forms */
+    form .row{display:flex;gap:10px}
+    label{display:block;font-size:0.9rem;margin-bottom:6px}
+    input[type="text"],input[type="email"],input[type="tel"],textarea,select{
+      width:100%;
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid #e6eef8;
+      background:#fbfdff;
+      font-size:0.95rem;
+      outline:none;
+    }
+    textarea{min-height:120px;resize:vertical}
+    button[type="submit"]{
+      padding:10px 14px;border-radius:9px;border:0;background:var(--accent);color:white;font-weight:700;
+      cursor:pointer;
+    }
+
+    /* Reviews */
+    .reviews-grid{display:grid;grid-template-columns: repeat(2,1fr);gap:10px}
+    .review{
+      padding:10px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#fbfdff);border:1px solid #eef6ff;
+      min-height:72px;display:flex;flex-direction:column;justify-content:center;
+    }
+    .stars{display:flex;gap:4px;margin-bottom:6px}
+    .rev-name{font-weight:700;font-size:0.95rem;color:#07203a}
+
+    .show-more{
+      display:block;
+      width:100%;
+      padding:10px;border-radius:9px;border:1px dashed #dbeafe;background:transparent;color:var(--brand);
+      text-align:center;margin-top:10px;cursor:pointer;font-weight:700;
+    }
+
+    footer{margin-top:18px;color:var(--muted);font-size:0.9rem;text-align:center}
+
+    @media (max-width:980px){
+      main{grid-template-columns:1fr; padding-bottom:30px}
+      .reviews-grid{grid-template-columns:repeat(1,1fr)}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+      .top-contact{text-align:left}
+    }
+    /* small utilities */
+    .small{font-size:0.9rem;color:var(--muted)}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#eef2ff;color:var(--brand);font-weight:700}
+  </style>
+</head>
+<body>
+  <div class="site" id="siteRoot">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">KM</div>
+        <div>
+          <h1>Kevins Mobile RV Repair LLC</h1>
+          <div class="small muted">Owner: Kevin • Mobile RV service in Bethany, OK</div>
+        </div>
+      </div>
+
+      <div class="top-contact">
+        <!-- Clickable phone, immediate call on mobile -->
+        <a class="phone" href="tel:+14059657511" aria-label="Call Kevins Mobile RV Repair +1 (405) 965-7511">
+          +1 (405) 965-7511
+        </a>
+        <div class="small muted">
+          <span class="badge">Service Area: Bethany, OK</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Left column -->
+      <section>
+        <div class="card">
+          <div class="lead">
+            <div>
+              <div class="small muted">Mobile RV Repairs • Same-day & emergency calls</div>
+              <h2 style="margin-top:6px;margin-bottom:6px">Trusted RV repair done by Kevin</h2>
+              <div class="small">Experienced mobile technician — diagnostics, maintenance, electrical, plumbing, slide-outs, HVAC and more.</div>
+            </div>
+
+            <div style="text-align:right">
+              <a class="cta" href="tel:+14059657511">Call Kevin</a>
+              <div class="small" style="margin-top:6px">Open today: 8:30 AM–6:00 PM</div>
+            </div>
+          </div>
+
+          <!-- Map -->
+          <div style="margin-top:12px;margin-bottom:14px;">
+            <!-- live google iframe; uses coordinates from your provided link -->
+            <iframe
+              class="mapframe"
+              title="Kevins Mobile RV Repair — Map"
+              loading="lazy"
+              src="https://maps.google.com/maps?q=35.5308492,-97.6341087&z=14&output=embed"
+              allowfullscreen>
+            </iframe>
+            <div style="margin-top:8px;">
+              <address>
+                6904 NW 59th St, Bethany, OK 73008
+              </address>
+              <div class="small">Hours:
+                <ul class="hours-list" aria-hidden="false" style="display:inline-block;margin-left:8px">
+                  <li>Mon–Sat: 8:30 AM – 6:00 PM</li>
+                  <li>Sun: 8:30 AM – 5:00 PM</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact / Email form -->
+          <hr style="border:none;border-top:1px solid #eef6ff;margin:14px 0;" />
+          <h3 style="margin-top:0;margin-bottom:8px">Contact Kevin</h3>
+          <p class="small muted">Fill in and we'll get back to you quickly. For immediate service call: <strong>+1 (405) 965-7511</strong>.</p>
+
+          <!-- Note: This example uses mailto fallback; for production replace 'action' with your backend or use Formspree -->
+          <form id="contactForm" class="small" onsubmit="handleContactSubmit(event)" autocomplete="on" novalidate>
+            <div class="row" style="margin-bottom:10px">
+              <div style="flex:1">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" required placeholder="Your name" />
+              </div>
+              <div style="width:48%">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" required placeholder="+1 (405) 555-0123" />
+              </div>
+            </div>
+            <div style="margin-bottom:10px">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@example.com" />
+            </div>
+            <div style="margin-bottom:10px">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Describe your issue & location (city / nearest cross street)"></textarea>
+            </div>
+
+            <div style="display:flex;gap:10px;align-items:center">
+              <button type="submit">Send Message</button>
+              <div id="contactStatus" class="small muted" aria-live="polite"></div>
+            </div>
+          </form>
+
+          <p class="small muted" style="margin-top:12px">
+            <strong>Pro tip:</strong> For GitHub Pages, connect this form to a service like Formspree or Basin, or replace the `handleContactSubmit` function in the JS with a POST to your API endpoint.
+          </p>
+        </div>
+
+        <!-- Reviews card -->
+        <div class="card" style="margin-top:18px;">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <h3 style="margin:0">Customer Reviews</h3>
+            <div class="small muted">All 5-star reviews</div>
+          </div>
+          <p class="small muted" style="margin-top:6px;margin-bottom:8px">
+            Reviews are shown compressed for space. Click "Show more" to reveal additional reviews.
+          </p>
+
+          <div id="reviewsContainer" class="reviews-grid" aria-live="polite">
+            <!-- Reviews inserted by JS -->
+          </div>
+
+          <button id="reviewsMoreBtn" class="show-more" style="display:none" aria-controls="reviewsContainer">Show more</button>
+
+          <script>
+            /* --- Reviews data ---
+              - The user asked: "make a blank array for 5 reviews, i will put them in later."
+              - Format must match compressed examples like:
+                { name: "Reviewer 9", rating: 5, body: "" },
+              - All reviews are 5 stars and may have empty bodies.
+            */
+            const reviewsData = [
+              { name: "Reviewer 1", rating: 5, body: "" },
+              { name: "Reviewer 2", rating: 5, body: "" },
+              { name: "Reviewer 3", rating: 5, body: "" },
+              { name: "Reviewer 4", rating: 5, body: "" },
+              { name: "Reviewer 5", rating: 5, body: "" }
+            ];
+
+            // Implementation: show up to 6 initially; reveal 6 more on each click.
+            (function initReviews(){
+              const container = document.getElementById('reviewsContainer');
+              const moreBtn = document.getElementById('reviewsMoreBtn');
+
+              let shown = 0;
+              const chunk = 6;
+
+              function render(){
+                container.innerHTML = '';
+                const total = reviewsData.length;
+                const toShow = Math.min(shown, total);
+                for(let i=0;i<toShow;i++){
+                  const r = reviewsData[i];
+                  const item = document.createElement('div');
+                  item.className = 'review';
+                  item.innerHTML = `
+                    <div>
+                      <div class="stars" aria-hidden="true">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
+                      <div class="rev-name">${escapeHtml(r.name)}</div>
+                      <div class="small muted" style="margin-top:6px">${escapeHtml(r.body || '')}</div>
+                    </div>
+                  `;
+                  container.appendChild(item);
+                }
+
+                // show/hide "more" button
+                if (shown < total) {
+                  moreBtn.style.display = 'block';
+                  const remain = total - shown;
+                  const nextReveal = Math.min(chunk, remain);
+                  moreBtn.textContent = `Show ${nextReveal} more (showing ${toShow} of ${total})`;
+                } else {
+                  moreBtn.style.display = 'none';
+                }
+              }
+
+              function showMore(){
+                const total = reviewsData.length;
+                shown = Math.min(total, shown + chunk);
+                render();
+              }
+
+              // initial shown: up to 6 or all if fewer
+              shown = Math.min(chunk, reviewsData.length);
+              render();
+
+              moreBtn.addEventListener('click', showMore);
+
+              // small utility for safety
+              function escapeHtml(s){
+                return (s||'').replace(/[&<>"']/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];});
+              }
+            })();
+          </script>
+        </div>
+      </section>
+
+      <!-- Right column -->
+      <aside>
+        <div class="card">
+          <h3 style="margin-top:0">Quick contact</h3>
+          <p class="small muted">Direct call, quick email, or visit the shop address.</p>
+
+          <div style="margin-top:8px">
+            <a class="cta" href="tel:+14059657511" style="display:inline-block;margin-bottom:10px">Call +1 (405) 965-7511</a>
+            <div style="margin-bottom:10px">
+              <strong>Email</strong>
+              <div class="small muted">Use the form above to email</div>
+            </div>
+
+            <div style="margin-bottom:10px">
+              <strong>Address</strong>
+              <address>6904 NW 59th St, Bethany, OK 73008</address>
+            </div>
+          </div>
+
+          <hr style="border:none;border-top:1px solid #eef6ff;margin:12px 0" />
+
+          <!-- Minimal "email" form that triggers mailto as fallback. Replace mailto in production. -->
+          <form id="emailForm" onsubmit="handleEmailSend(event)">
+            <label for="e_name">Name</label>
+            <input id="e_name" name="name" type="text" required placeholder="Your name" />
+            <label for="e_msg" style="margin-top:8px">Short message</label>
+            <textarea id="e_msg" name="message" placeholder="Short message" required></textarea>
+            <div style="margin-top:8px;display:flex;gap:8px">
+              <button type="submit">Send Email</button>
+              <button type="button" onclick="window.location='tel:+14059657511'">Call</button>
+            </div>
+            <div id="emailStatus" class="small muted" style="margin-top:8px"></div>
+          </form>
+
+          <script>
+            function handleEmailSend(e){
+              e.preventDefault();
+              const n = document.getElementById('e_name').value.trim();
+              const m = document.getElementById('e_msg').value.trim();
+              // mailto fallback
+              const subject = encodeURIComponent('Website inquiry from ' + n);
+              const body = encodeURIComponent(m + "\\n\\nContact: " + (n || ''));
+              // Note: mailto will open user's email client.
+              window.location.href = `mailto:info@kevinsmobile.rv?subject=${subject}&body=${body}`;
+              document.getElementById('emailStatus').textContent = 'Opening mail client...';
+            }
+
+            // Contact form handler: demonstrates a JS-only client-side fallback that opens mailto.
+            function handleContactSubmit(e){
+              e.preventDefault();
+              const n = document.getElementById('name').value.trim();
+              const p = document.getElementById('phone').value.trim();
+              const em = document.getElementById('email').value.trim();
+              const msg = document.getElementById('message').value.trim();
+              const subject = encodeURIComponent('Service request from ' + n);
+              const body = encodeURIComponent(`Name: ${n}\\nPhone: ${p}\\nEmail: ${em}\\n\\nMessage:\\n${msg}`);
+              // Mailto fallback (replace or call your backend in production)
+              window.location.href = `mailto:info@kevinsmobile.rv?subject=${subject}&body=${body}`;
+              document.getElementById('contactStatus').textContent = 'Opening mail client...';
+            }
+          </script>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h4 style="margin-top:0">Payments / Square</h4>
+          <p class="small muted">If you accept payments via Square on-site, insert your Square Location ID where indicated in the script comments below.</p>
+
+          <pre style="font-size:13px;background:#fbfdff;padding:8px;border-radius:8px;border:1px solid #eef6ff;overflow:auto">
+// Replace YOUR_LOCATION_ID in the code below with your actual Square location ID:
+const SQUARE_LOCATION_ID = 'YOUR_LOCATION_ID';
+          </pre>
+
+          <p class="small muted">(No payment widget active in this template — add Square SDK or your payment flow as needed.)</p>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h4 style="margin-top:0">Links</h4>
+          <ul style="padding-left:18px;margin:0" class="small muted">
+            <li><a href="https://www.google.com/maps/place/Kevins+Mobile+RV+Repair+LLC/@35.5308492,-97.7103264,13z" target="_blank">Google Maps listing</a></li>
+            <li><a href="https://github.com/JamesBrownR/Kevins-Mobile-RV-Repair-LLC" target="_blank">GitHub repo</a></li>
+          </ul>
+        </div>
+
+      </aside>
+    </main>
+
+    <footer>
+      <div class="small muted">© <span id="thisYear"></span> Kevins Mobile RV Repair LLC — <a href="tel:+14059657511">+1 (405) 965-7511</a></div>
+    </footer>
+  </div>
+
+  <!-- Structured data: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"AutoRepair", 
+    "name":"Kevins Mobile RV Repair LLC",
+    "telephone":"+1-405-965-7511",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"6904 NW 59th St",
+      "addressLocality":"Bethany",
+      "addressRegion":"OK",
+      "postalCode":"73008",
+      "addressCountry":"US"
+    },
+    "url":"https://github.com/JamesBrownR/Kevins-Mobile-RV-Repair-LLC",
+    "openingHours":"Mo,Tu,We,Th,Fr,Sa 08:30-18:00, Su 08:30-17:00"
+  }
+  </script>
+
+  <script>
+    // Insert current year
+    document.getElementById('thisYear').textContent = new Date().getFullYear();
+
+    /* ---- SQUARE placeholder ----
+      Replace 'YOUR_LOCATION_ID' with your Square location id before including Square scripts.
+      Example usage area (no active payment code here):
+      const SQUARE_LOCATION_ID = 'YOUR_LOCATION_ID';
+    */
+    const SQUARE_LOCATION_ID = 'YOUR_LOCATION_ID'; // <<-- Replace this string
+
+    // Optional: small analytics placeholder (no external calls). Remove if undesired.
+    (function(){
+      if(typeof navigator !== 'undefined' && navigator.doNotTrack !== '1'){
+        // minimal event
+        console.log('Site loaded for Kevins Mobile RV Repair LLC');
+      }
+    })();
+  </script>
+
+  <!-- Accessibility small note: ensure keyboard focus outline is visible in your browser -->
+</body>
+</html>
