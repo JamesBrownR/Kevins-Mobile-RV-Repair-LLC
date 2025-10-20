@@ -537,13 +537,33 @@
   <script>
     document.getElementById('thisYear').textContent = new Date().getFullYear();
 
-    const reviewsData = [
-      { name: "Reviewer 1", rating: 5, body: "" },
-      { name: "Reviewer 2", rating: 5, body: "" },
-      { name: "Reviewer 3", rating: 5, body: "" },
-      { name: "Reviewer 4", rating: 5, body: "" },
-      { name: "Reviewer 5", rating: 5, body: "" }
-    ];
+ const reviewsData = [
+  { name: "Heather Nottingham", rating: 5, body: "Kevin installed Starlink in our toy hauler and did excellent work. He made sure all the cables were hidden by running them through the ceiling, and he minimized roof penetrations while carefully sealing every spot. Although the job took longer than he expected, he stood by his quoted price, which says a lot about his integrity. On top of that, he helped my husband with a couple of other issues while he was here and even pointed out a broken cable on one of our slides, giving advice on how to repair it. Kevin was professional, thorough, and very friendly. Highly recommend his services! ⭐⭐⭐⭐⭐" },
+  { name: "Karla Thompson", rating: 5, body: "Kevin was a complete blessing! He not only was willing to help he went above and beyond to make sure we had what we needed to get back on the road. I HIGHLY recommend Kevin's Mobile RV Repair!!! We we're stranded in OK City and every call we made we were told they couldn't help us, But Not Kevin. Thank you For Everything." },
+  { name: "terrymc271", rating: 5, body: "Kevin is very knowledgeable and went out of his way to make sure I was taken care of with my wishes being his priority. He helped me figure out some other issues that I was having also. If I lived in the area, he would be my go to guy for all my RV problems. Thanks Kevin." },
+  { name: "L Skinner", rating: 5, body: "Kevin is the best! Outstanding customer service and quality work! We had an issue with our awning that extends with our 'slide-out' on our RV while traveling and called this mobile repair service. Quick arrival and fully prepared! Very professional, trustworthy, and knowledgeable, and detailed in his work. He has over 19 years of experience on maintenance of RV’s. Highly recommend for any RV mechanical issues!" },
+  { name: "Craig Wheeler", rating: 5, body: "Kevin serviced the bearings & checked brakes on my 5th-wheel. He responded to my call quickly & was very punctual and professional. When finished he cleaned to where you could hardly tell he had been here. I would highly recommend Kevins Mobile RV Repair for any of your RV repairs needs." },
+  { name: "Austin Hackett", rating: 5, body: "This guy was awesome! After calling two other 'repair' people that couldn’t fix my RV water heater issue, I called him and he came out and gave me straight answers and actually fixed my issue! He was honest and fast, I HIGHLY recommend him to anyone! Don’t call anyone else except Kevin, he’s the best!" },
+  { name: "Misty Folsum", rating: 5, body: "Moved my daughter and her family from Duncan. We tried everything, thanks to Mr Kevin for all his help. He got the RV back up and running and changed everything for their new beginning." },
+  { name: "Tom Burick", rating: 5, body: "Kevin was awesome! Arrived much quicker than anticipated and got me fixed up and back on the road in just 2 hours, and that was with an additional trip to get some parts!!! Recommend 1000%!" },
+  { name: "Peggy Douglas", rating: 5, body: "Kevin's Mobile RV repair is top notch. I was having electrical problems in my PopUp camper and they were able to come out same day. They found my problem (which was totally my ignorance of what I was doing) but took the time to explain everything to me. Checked out my AC, and the frig. You can't go wrong calling them. His pricing is more than fair. He is now on speed dial for all my questions." },
+  { name: "Keke M", rating: 5, body: "The owner is very knowledgeable and professional! He diagnosed our leaking water issues and repaired them. We have not had any water leaks since the repair. My husband and I will continue to use this company for RV repair work. I highly recommend this company!" },
+  { name: "Joe S", rating: 5, body: "This is the 2nd mobile job Kevin has done for us. 2021 Grand Design Reflection. I originally called for 2 items to be repaired and found 2 more which he fixed very quickly while he was here. Very happy with him & his work. Left the work areas spotless. He is definitely my go to repair service and on speed dial. Pricing is very reasonable." },
+  { name: "Julie Lesser", rating: 5, body: "Kevin was very knowledgeable, helpful, and patient. He took the time to explain the process and make us not feel rushed and he did a thorough job. He also took the time to clean up any messes and leave everything looking as it was before. Highly recommend to call him for any RV needs." },
+  { name: "jessica moore", rating: 5, body: "Replaced our rooftop AC on site! Life saver in the Oklahoma summer heat! 100% recommend" },
+  { name: "Larry W", rating: 5, body: "Kevin has fixed a couple of things in our rv and has done a great job." },
+  { name: "Trevor Whitmire", rating: 5, body: "Fixed my heater....Fast and dependable. Explained everything very well and check on other things as well. Will use him again." },
+  { name: "Joe Foley", rating: 5, body: "Kevin did a great job finding and fixing our problems……" },
+  { name: "Lupe Cardenas", rating: 5, body: "Very knowledgeable, great customer service and great communication!!!" },
+  { name: "Bad Company", rating: 5, body: "Great service" },
+  { name: "Linda Perez", rating: 5, body: "Kevin’s Mobile RV Repair LLC did an excellent job fixing the A/C in our RV! The unit we purchased arrived damaged, and Kevin went out of his way to make an extra trip to install the replacement once it came in. He was very friendly, attentive, and offered fair, reasonable pricing. Highly recommend his services, great experience from start to finish!" },
+  { name: "Robert Ross", rating: 5, body: "" },
+  { name: "Dale Gall", rating: 5, body: "" },
+  { name: "Davion Wright", rating: 5, body: "" },
+  { name: "Dondrea 'King 2 Tone' Jordan", rating: 5, body: "" },
+  { name: "Tyrell Gordon", rating: 5, body: "" },
+  { name: "Mark Ollendick", rating: 5, body: "" }
+];
 
     (function initReviews(){
       const container = document.getElementById('reviewsContainer');
