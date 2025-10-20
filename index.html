@@ -4,51 +4,32 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Kevin's Mobile RV Repair LLC — Mobile RV Repair in Bethany, OK</title>
-  <meta name="description" content="Kevin's Mobile RV Repair LLC — Mobile RV repair, service calls, and maintenance in Bethany, OK. Call Kevin: +1 (405) 965-7511." />
-  <meta name="theme-color" content="#d97706" />
+  <meta name="description" content="Kevin's Mobile RV Repair LLC — Professional mobile RV repair, service calls, and maintenance in Bethany, OK. Call Kevin: +1 (405) 965-7511." />
+  <meta name="theme-color" content="#b45309" />
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap');
     
-    :root{
-      --sunset-orange: #d97706;
+    :root {
+      --sunset-orange: #b45309;
       --desert-tan: #fef3c7;
-      --road-gray: #52525b;
+      --road-gray: #4b5563;
       --sky-blue: #0ea5e9;
       --forest-green: #059669;
-      --bg: #fffbeb;
+      --bg: #f9fafb;
       --card: #ffffff;
       --max-width: 1200px;
-      --shadow: 0 10px 40px rgba(217, 119, 6, 0.15);
+      --shadow: 0 8px 30px rgba(180, 83, 9, 0.1);
       font-family: 'Outfit', system-ui, -apple-system, sans-serif;
     }
     
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
-      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-      color: #18181b;
+      background: linear-gradient(135deg, #f9fafb 0%, #fef3c7 20%);
+      color: #1f2937;
       line-height: 1.6;
       overflow-x: hidden;
-    }
-
-    /* Animated road stripe background */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 50px,
-        rgba(217, 119, 6, 0.03) 50px,
-        rgba(217, 119, 6, 0.03) 100px
-      );
-      pointer-events: none;
-      z-index: 0;
     }
 
     .container {
@@ -59,26 +40,15 @@
       padding: 20px;
     }
 
-    /* Hero Header */
+    /* Header */
     header {
-      background: linear-gradient(135deg, #d97706 0%, #ea580c 100%);
-      border-radius: 24px;
+      background: linear-gradient(135deg, #b45309 0%, #d97706 100%);
+      border-radius: 16px;
       padding: 40px;
       margin-bottom: 30px;
       box-shadow: var(--shadow);
       position: relative;
-      overflow: hidden;
       color: white;
-    }
-
-    header::before {
-      content: '🚐';
-      position: absolute;
-      right: -30px;
-      top: -30px;
-      font-size: 200px;
-      opacity: 0.1;
-      transform: rotate(15deg);
     }
 
     .header-content {
@@ -92,9 +62,9 @@
 
     .brand-section h1 {
       font-size: 2.5rem;
-      font-weight: 800;
+      font-weight: 700;
       margin-bottom: 10px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.15);
     }
 
     .tagline {
@@ -105,20 +75,20 @@
 
     .cta-phone {
       background: white;
-      color: #d97706;
-      padding: 20px 35px;
-      border-radius: 16px;
+      color: var(--sunset-orange);
+      padding: 18px 32px;
+      border-radius: 12px;
       text-decoration: none;
       font-weight: 700;
-      font-size: 1.5rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      font-size: 1.4rem;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
       transition: transform 0.2s, box-shadow 0.2s;
       display: inline-block;
     }
 
     .cta-phone:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     .cta-subtext {
@@ -141,23 +111,24 @@
 
     .service-card {
       background: white;
-      border-radius: 20px;
+      border-radius: 16px;
       padding: 30px;
       box-shadow: var(--shadow);
-      transition: transform 0.3s, box-shadow 0.3s;
-      border: 3px solid transparent;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 2px solid transparent;
     }
 
     .service-card:hover {
-      transform: translateY(-8px) rotate(-1deg);
-      box-shadow: 0 15px 50px rgba(217, 119, 6, 0.25);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(180, 83, 9, 0.15);
       border-color: var(--sunset-orange);
     }
 
     .service-icon {
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 15px;
       display: block;
+      color: var(--sunset-orange);
     }
 
     .service-card h3 {
@@ -168,7 +139,7 @@
 
     .section-title {
       font-size: 2rem;
-      font-weight: 800;
+      font-weight: 700;
       color: var(--road-gray);
       margin-bottom: 10px;
       position: relative;
@@ -181,7 +152,7 @@
       bottom: -5px;
       left: 0;
       width: 60%;
-      height: 4px;
+      height: 3px;
       background: linear-gradient(90deg, var(--sunset-orange), transparent);
     }
 
@@ -195,10 +166,10 @@
 
     .card {
       background: white;
-      border-radius: 20px;
-      padding: 35px;
+      border-radius: 16px;
+      padding: 30px;
       box-shadow: var(--shadow);
-      border: 2px solid rgba(217, 119, 6, 0.1);
+      border: 1px solid rgba(180, 83, 9, 0.05);
     }
 
     /* Contact Form Styling */
@@ -223,12 +194,12 @@
 
     input, textarea, select {
       width: 100%;
-      padding: 14px;
-      border: 2px solid #e5e7eb;
-      border-radius: 12px;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
       font-size: 1rem;
       font-family: inherit;
-      transition: border-color 0.3s;
+      transition: border-color 0.2s;
     }
 
     input:focus, textarea:focus {
@@ -242,28 +213,28 @@
     }
 
     button[type="submit"] {
-      background: linear-gradient(135deg, var(--sunset-orange), #ea580c);
+      background: linear-gradient(135deg, var(--sunset-orange), #d97706);
       color: white;
-      padding: 16px 32px;
+      padding: 14px 30px;
       border: none;
-      border-radius: 12px;
+      border-radius: 8px;
       font-size: 1.1rem;
       font-weight: 700;
       cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
+      box-shadow: 0 4px 12px rgba(180, 83, 9, 0.2);
     }
 
     button[type="submit"]:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(217, 119, 6, 0.4);
+      box-shadow: 0 6px 18px rgba(180, 83, 9, 0.3);
     }
 
     /* Map Styling */
     .map-container {
-      border-radius: 16px;
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       margin: 25px 0;
     }
 
@@ -281,15 +252,15 @@
     }
 
     .review {
-      background: linear-gradient(135deg, #fffbeb, white);
+      background: white;
       padding: 20px;
-      border-radius: 16px;
-      border-left: 4px solid var(--sunset-orange);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      border-left: 3px solid var(--sunset-orange);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .stars {
-      color: #fbbf24;
+      color: #f59e0b;
       font-size: 1.2rem;
       margin-bottom: 10px;
     }
@@ -305,11 +276,11 @@
       display: inline-block;
       background: linear-gradient(135deg, var(--forest-green), #10b981);
       color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 20px;
+      font-weight: 600;
       margin: 5px;
-      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+      box-shadow: 0 3px 10px rgba(5, 150, 105, 0.2);
     }
 
     .hours-list {
@@ -319,7 +290,7 @@
 
     .hours-list li {
       padding: 8px 0;
-      border-bottom: 1px dashed #e5e7eb;
+      border-bottom: 1px dashed #d1d5db;
       font-size: 1.05rem;
     }
 
@@ -329,15 +300,15 @@
 
     .show-more {
       width: 100%;
-      padding: 14px;
+      padding: 12px;
       margin-top: 15px;
       background: transparent;
-      border: 2px dashed var(--sunset-orange);
-      border-radius: 12px;
+      border: 2px solid var(--sunset-orange);
+      border-radius: 8px;
       color: var(--sunset-orange);
-      font-weight: 700;
+      font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s;
+      transition: all 0.2s;
     }
 
     .show-more:hover {
@@ -382,10 +353,10 @@
       <div class="header-content">
         <div class="brand-section">
           <h1>Kevin's Mobile RV Repair</h1>
-          <p class="tagline">🛠️ Your Adventure Back on the Road</p>
+          <p class="tagline">Professional RV Repair and Maintenance</p>
         </div>
         <div style="text-align: center;">
-          <a class="cta-phone" href="tel:+14059657511">📞 (405) 965-7511</a>
+          <a class="cta-phone" href="tel:+14059657511">Call (405) 965-7511</a>
           <div class="cta-subtext">Open today: 8:30 AM – 6:00 PM</div>
         </div>
       </div>
@@ -399,7 +370,7 @@
         <div class="service-card">
           <span class="service-icon">🔧</span>
           <h3>Engine & Mechanical</h3>
-          <p>Complete diagnostics, tune-ups, and repairs to keep your RV running smooth.</p>
+          <p>Complete diagnostics, tune-ups, and repairs to keep your RV running smoothly.</p>
         </div>
         <div class="service-card">
           <span class="service-icon">⚡</span>
@@ -424,7 +395,7 @@
         <div class="service-card">
           <span class="service-icon">🆘</span>
           <h3>Emergency Service</h3>
-          <p>Same-day emergency repairs to get you back on your journey fast.</p>
+          <p>Same-day emergency repairs to get you back on your journey quickly.</p>
         </div>
       </div>
     </div>
@@ -433,7 +404,7 @@
       <section>
         <div class="card">
           <h2 class="section-title">Get in Touch</h2>
-          <p style="margin: 15px 0; color: var(--road-gray);">Fill out the form below or call for immediate service!</p>
+          <p style="margin: 15px 0; color: var(--road-gray);">Fill out the form below or call for immediate service.</p>
           
           <form id="contactForm" class="contact-form" onsubmit="handleContactSubmit(event)">
             <div class="form-row">
@@ -457,7 +428,7 @@
               <textarea id="message" name="message" placeholder="Describe your RV issue and location..." required></textarea>
             </div>
             
-            <button type="submit">Send Message 🚀</button>
+            <button type="submit">Send Message</button>
             <div id="contactStatus" style="margin-top: 10px; color: var(--forest-green); font-weight: 600;"></div>
           </form>
         </div>
@@ -470,13 +441,13 @@
               class="mapframe"
               title="Kevin's Mobile RV Repair — Map"
               loading="lazy"
-              src="https://maps.google.com/maps?q=35.5308492,-97.6341087&z=14&output=embed"
+              src="https://www.google.com/maps/embed/v1/place?key=API_KEY&q=place_id:ChIJRUQcPdUFtx4RI1pta4nZfxs"
               allowfullscreen>
             </iframe>
           </div>
           
           <div style="margin-top: 20px;">
-            <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;">📍 6904 NW 59th St, Bethany, OK 73008</p>
+            <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;">Address: 6904 NW 59th St, Bethany, OK 73008</p>
             
             <ul class="hours-list">
               <li><strong>Monday – Saturday:</strong> 8:30 AM – 6:00 PM</li>
@@ -484,15 +455,15 @@
             </ul>
             
             <div style="margin-top: 20px;">
-              <span class="info-badge">🚐 Mobile Service Available</span>
-              <span class="info-badge">⚡ Same-Day Emergency</span>
+              <span class="info-badge">Mobile Service Available</span>
+              <span class="info-badge">Same-Day Emergency</span>
             </div>
           </div>
         </div>
 
         <div class="card" style="margin-top: 30px;">
           <h2 class="section-title">Customer Reviews</h2>
-          <p style="color: var(--road-gray); margin: 10px 0;">See what our happy customers have to say!</p>
+          <p style="color: var(--road-gray); margin: 10px 0;">See what our satisfied customers have to say.</p>
           
           <div id="reviewsContainer" class="reviews-grid"></div>
           <button id="reviewsMoreBtn" class="show-more" style="display:none"></button>
@@ -503,12 +474,12 @@
         <div class="card">
           <h3 style="color: var(--sunset-orange); margin-bottom: 15px;">Why Choose Kevin?</h3>
           <ul style="list-style: none; line-height: 2;">
-            <li>✅ 15+ years experience</li>
-            <li>✅ Mobile service - we come to you</li>
-            <li>✅ Fair, transparent pricing</li>
-            <li>✅ Emergency repairs available</li>
-            <li>✅ All RV makes & models</li>
-            <li>✅ Licensed & insured</li>
+            <li>15+ years of experience</li>
+            <li>Mobile service - we come to you</li>
+            <li>Fair, transparent pricing</li>
+            <li>Emergency repairs available</li>
+            <li>All RV makes & models</li>
+            <li>Licensed & insured</li>
           </ul>
         </div>
 
@@ -517,7 +488,7 @@
           <p style="margin-bottom: 15px;">Need service right now?</p>
           <a class="cta-phone" href="tel:+14059657511" style="width: 100%; text-align: center; padding: 15px; font-size: 1.2rem;">Call Kevin Now</a>
           
-          <div style="margin-top: 20px; padding-top: 20px; border-top: 2px dashed #e5e7eb;">
+          <div style="margin-top: 20px; padding-top: 20px; border-top: 2px dashed #d1d5db;">
             <p style="font-size: 0.95rem; color: var(--road-gray);">
               <strong>Address:</strong><br>
               6904 NW 59th St<br>
@@ -540,7 +511,7 @@
         © <span id="thisYear"></span> Kevin's Mobile RV Repair LLC
       </p>
       <p>
-        <a href="tel:+14059657511" style="color: var(--sunset-orange); font-weight: 700; text-decoration: none;">📞 (405) 965-7511</a>
+        <a href="tel:+14059657511" style="color: var(--sunset-orange); font-weight: 700; text-decoration: none;">(405) 965-7511</a>
       </p>
     </footer>
   </div>
