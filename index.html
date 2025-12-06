@@ -822,19 +822,21 @@ const galleryImages = [
     }
 ];
 
-    (function initReviews(){
+   (function initReviews(){
       const container = document.getElementById('reviewsContainer');
       const moreBtn = document.getElementById('reviewsMoreBtn');
       let shown = 0;
       const chunk = 3; // Show 3 bubbles at a time
+      const initialShow = 3; // How many to show initially
 
       function render(){
-        // Append instead of clear to keep the list growing
+        // Clear container and re-render based on 'shown' count
+        container.innerHTML = '';
         const total = reviewsData.length;
         const toShow = Math.min(shown + chunk, total);
         
-        // Loop through only the new ones
-        for(let i=shown; i<toShow; i++){
+        // Loop through and display reviews
+        for(let i=0; i<toShow; i++){
           const r = reviewsData[i];
           const item = document.createElement('div');
           item.className = 'review-bubble';
@@ -848,12 +850,30 @@ const galleryImages = [
 
         shown = toShow;
 
+        // Update button based on state
         if (shown >= total) {
-          moreBtn.style.display = 'none';
+          moreBtn.innerHTML = '⭐ LEAVE A REVIEW ON GOOGLE';
+          moreBtn.onclick = function() {
+            window.open('https://www.google.com/maps/place/Kevins+Mobile+RV+Repair+LLC/@35.5308492,-97.6341087,17z/data=!4m8!3m7!1s0x87b205d53d1c4449:0x1b7fd9b6896d5a21!8m2!3d35.5308492!4d-97.6341087!9m1!1b1!16s%2Fg%2F11wg7pl3td?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D', '_blank');
+          };
+        } else if (shown > initialShow) {
+          moreBtn.innerHTML = 'Read Less Stories';
+          moreBtn.onclick = readLess;
+        } else {
+          moreBtn.innerHTML = 'Read More Stories';
+          moreBtn.onclick = readMore;
         }
       }
 
-      moreBtn.addEventListener('click', render);
+      function readMore(){
+        render();
+      }
+
+      function readLess(){
+        shown = 0; // Reset to initial view
+        render();
+      }
+
       render(); // Initial load
     })();
 
