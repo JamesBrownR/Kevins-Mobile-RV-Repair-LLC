@@ -450,6 +450,18 @@ nav a:hover {
     /* -----------------------------------------------------------
        CONTACT: Notebook Paper
     ----------------------------------------------------------- */
+    .flexcolumnorrow
+    {
+display:flex;
+      flex-direction:column;
+    }
+    @media(min-width:799px){
+      .flexcolumnorrow
+    {
+
+      flex-direction:row;
+    }
+    }
     .notebook-paper {
       background-color: #fff;
       background-image: linear-gradient(#999 1px, transparent 1px);
@@ -629,7 +641,7 @@ nav a:hover {
       </div>
     </section>
 
-<section id="contact" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px;">      
+<section id="contact" style="margin-bottom: 60px;" class="flexcolumnorrow">      
       <div>
         <h3>Where I'm Based</h3>
         <p>6904 NW 59th St, Bethany, OK 73008</p>
