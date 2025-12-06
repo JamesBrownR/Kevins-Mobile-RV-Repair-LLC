@@ -436,12 +436,15 @@ nav a:hover {
   </style>
 </head>
 <body>
-  <nav>
-  <ul>
-    <li><a href="#services">What I Fix</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#contact">Contact</a></li>
+ <nav>
+  <button class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+    ☰ MENU
+  </button>
+  <ul id="navMenu">
+    <li><a href="#services" onclick="closeMenu()">What I Fix</a></li>
+    <li><a href="#gallery" onclick="closeMenu()">Gallery</a></li>
+    <li><a href="#reviews" onclick="closeMenu()">Reviews</a></li>
+    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
   </ul>
 </nav>
   <header>
