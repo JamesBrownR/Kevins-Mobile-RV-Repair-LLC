@@ -187,11 +187,42 @@ nav a:hover {
   transform: rotate(-2deg) scale(1.05);
 }
 
+/* Hamburger Menu Button */
+.menu-toggle {
+  display: none;
+  background: var(--ink);
+  color: #fff;
+  border: none;
+  padding: 15px 20px;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.menu-toggle:hover {
+  background: var(--marker-red);
+}
+
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    width: calc(100% - 20px);
+  }
+  
   nav ul {
     flex-direction: column;
     align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
   }
+  
+  nav ul.open {
+    max-height: 500px;
+  }
+  
   nav a {
     width: 100%;
     text-align: center;
@@ -618,6 +649,27 @@ nav a:hover {
       window.location.href = `mailto:info@kevinsmobile.rv?subject=${subject}&body=${body}`; //
       document.getElementById('contactStatus').textContent = 'Drafting email...';
     }
+
+    // Mobile Menu Toggle
+function toggleMenu() {
+  const menu = document.getElementById('navMenu');
+  const toggle = document.getElementById('menuToggle');
+  menu.classList.toggle('open');
+  
+  // Change button text
+  if (menu.classList.contains('open')) {
+    toggle.innerHTML = '✕ CLOSE';
+  } else {
+    toggle.innerHTML = '☰ MENU';
+  }
+}
+
+function closeMenu() {
+  const menu = document.getElementById('navMenu');
+  const toggle = document.getElementById('menuToggle');
+  menu.classList.remove('open');
+  toggle.innerHTML = '☰ MENU';
+}
   </script>
 </body>
 </html>
