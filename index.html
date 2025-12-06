@@ -144,7 +144,58 @@
       color: var(--highlight);
       font-family: 'Patrick Hand', cursive;
     }
+/* -----------------------------------------------------------
+   NAVIGATION
+----------------------------------------------------------- */
+nav {
+  background: var(--paper);
+  border-bottom: 3px solid var(--ink);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  display: block;
+  padding: 15px 25px;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background: var(--highlight);
+  transform: rotate(-2deg) scale(1.05);
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav a {
+    width: 100%;
+    text-align: center;
+  }
+}
     /* -----------------------------------------------------------
        SERVICES: The Polaroid Wall
     ----------------------------------------------------------- */
@@ -356,11 +407,9 @@
 
   <header>
     <div class="container">
-      <div style="font-family: 'Permanent Marker'; font-size: 60px; line-height: 0.8; margin-bottom:20px;">
-        KEVINS<br>
-        MOBILE RV<br>
-        REPAIR LLC.
-      </div>
+      <div class="logo-area">
+  <img src="Pics/Hero.jpg" alt="Kevin's Mobile RV Repair LLC Logo" style="max-width: 400px; border: 3px solid white; border-radius: 10px; transform: rotate(-3deg);">
+</div>
       
       <p class="tagline">"We Bring the Fix to Your Sticks!"</p>
       
@@ -373,6 +422,18 @@
       </p>
     </div>
   </header>
+  </header>
+
+<nav>
+  <ul>
+    <li><a href="#services">What I Fix</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="container">
 
   <main class="container">
 
@@ -440,8 +501,8 @@
       </div>
     </section>
 
-    <section style="margin: 80px 0;">
-      <div style="text-align: center;">
+<section id="reviews" style="margin: 80px 0;">
+  <div style="text-align: center;">
         <h2 class="section-header">Folks Love Kevin!</h2>
         <p>(Real reviews from real campers)</p>
       </div>
@@ -454,8 +515,7 @@
       </div>
     </section>
 
-    <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px;">
-      
+<section id="contact" style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 60px;">      
       <div>
         <h3>Where I'm Based</h3>
         <p>6904 NW 59th St, Bethany, OK 73008</p>
