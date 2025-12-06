@@ -300,29 +300,101 @@ nav a:hover {
     /* -----------------------------------------------------------
        GALLERY SECTION
     ----------------------------------------------------------- */
-    .gallery-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-    
-    .gallery-item {
-      width: 200px;
-      height: 200px;
-      background: #ccc;
-      border: 4px solid var(--ink);
-      /* Random heavy border radius */
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-    }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+   /* -----------------------------------------------------------
+   GALLERY SECTION
+----------------------------------------------------------- */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
+.gallery-item {
+  width: 100%;
+  aspect-ratio: 1;
+  background: #ccc;
+  border: 4px solid var(--ink);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05) rotate(-2deg);
+  z-index: 10;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+/* Lightbox Modal for Image Zoom */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+  border: 5px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+  animation: zoomIn 0.3s ease;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'Permanent Marker', cursive;
+  transition: transform 0.2s;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.2) rotate(90deg);
+  color: var(--highlight);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.5); }
+  to { transform: scale(1); }
+}
     /* -----------------------------------------------------------
        REVIEWS: Speech Bubbles
     ----------------------------------------------------------- */
@@ -908,6 +980,56 @@ function closeMenu() {
   menu.classList.remove('open');
   toggle.innerHTML = '☰ MENU';
 }
+
+    // Gallery Lightbox Functionality
+(function initGalleryLightbox() {
+  // Create lightbox element
+  const lightbox = document.createElement('div');
+  lightbox.className = 'lightbox';
+  lightbox.id = 'galleryLightbox';
+  lightbox.innerHTML = `
+    <span class="lightbox-close" id="closeLightbox">&times;</span>
+    <img class="lightbox-content" id="lightboxImg">
+  `;
+  document.body.appendChild(lightbox);
+
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeLightbox = document.getElementById('closeLightbox');
+
+  // Add click handlers to all gallery items
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', function() {
+      const img = this.querySelector('img');
+      if (img && img.src) {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      }
+    });
+  });
+
+  // Close lightbox when clicking X
+  closeLightbox.addEventListener('click', function() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = 'auto';
+  });
+
+  // Close lightbox when clicking outside image
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+
+  // Close lightbox with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  });
+})();
   </script>
 </body>
 </html>
