@@ -919,59 +919,57 @@ const galleryImages = [
 ];
 
    (function initReviews(){
-      const container = document.getElementById('reviewsContainer');
-      const moreBtn = document.getElementById('reviewsMoreBtn');
-      let shown = 0;
-      const chunk = 3; // Show 3 bubbles at a time
-      const initialShow = 3; // How many to show initially
+  const container = document.getElementById('reviewsContainer');
+  const moreBtn = document.getElementById('reviewsMoreBtn');
+  const chunk = 3; // Show 3 bubbles at a time
+  const initialShow = 3; // How many to show initially
+  let shown = initialShow; // Start with initial amount shown
 
-      function render(){
-        // Clear container and re-render based on 'shown' count
-        container.innerHTML = '';
-        const total = reviewsData.length;
-        const toShow = Math.min(shown + chunk, total);
-        
-        // Loop through and display reviews
-        for(let i=0; i<toShow; i++){
-          const r = reviewsData[i];
-          const item = document.createElement('div');
-          item.className = 'review-bubble';
-          item.innerHTML = `
-            <div class="stars">${'★'.repeat(r.rating)}</div>
-            <p>"${r.body}"</p>
-            <div class="rev-name">- ${r.name}</div>
-          `;
-          container.appendChild(item);
-        }
+  function render(){
+    // Clear container and re-render based on 'shown' count
+    container.innerHTML = '';
+    const total = reviewsData.length;
+    
+    // Loop through and display reviews
+    for(let i = 0; i < shown; i++){
+      const r = reviewsData[i];
+      const item = document.createElement('div');
+      item.className = 'review-bubble';
+      item.innerHTML = `
+        <div class="stars">${'★'.repeat(r.rating)}</div>
+        <p>"${r.body}"</p>
+        <div class="rev-name">- ${r.name}</div>
+      `;
+      container.appendChild(item);
+    }
 
-        shown = toShow;
+    // Update button based on state
+    if (shown >= total) {
+      moreBtn.innerHTML = 'See Em All On Google';
+      moreBtn.onclick = function() {
+        window.open('https://www.google.com/maps/place/Kevins+Mobile+RV+Repair+LLC/@35.5308492,-97.6341087,17z/data=!4m8!3m7!1s0x87b205d53d1c4449:0x1b7fd9b6896d5a21!8m2!3d35.5308492!4d-97.6341087!9m1!1b1!16s%2Fg%2F11wg7pl3td?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D', '_blank');
+      };
+    } else if (shown > initialShow) {
+      moreBtn.innerHTML = 'Read Less Stories';
+      moreBtn.onclick = readLess;
+    } else {
+      moreBtn.innerHTML = 'Read More Stories';
+      moreBtn.onclick = readMore;
+    }
+  }
 
-        // Update button based on state
-        if (shown >= total) {
-          moreBtn.innerHTML = '⭐ LEAVE A REVIEW ON GOOGLE';
-          moreBtn.onclick = function() {
-            window.open('https://www.google.com/maps/place/Kevins+Mobile+RV+Repair+LLC/@35.5308492,-97.6341087,17z/data=!4m8!3m7!1s0x87b205d53d1c4449:0x1b7fd9b6896d5a21!8m2!3d35.5308492!4d-97.6341087!9m1!1b1!16s%2Fg%2F11wg7pl3td?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D', '_blank');
-          };
-        } else if (shown > initialShow) {
-          moreBtn.innerHTML = 'Read Less Stories';
-          moreBtn.onclick = readLess;
-        } else {
-          moreBtn.innerHTML = 'Read More Stories';
-          moreBtn.onclick = readMore;
-        }
-      }
+  function readMore(){
+    shown = Math.min(shown + chunk, reviewsData.length);
+    render();
+  }
 
-      function readMore(){
-        render();
-      }
+  function readLess(){
+    shown = initialShow; // Reset to initial view
+    render();
+  }
 
-      function readLess(){
-        shown = 0; // Reset to initial view
-        render();
-      }
-
-      render(); // Initial load
-    })();
+  render(); // Initial load
+})();
 
     function handleContactSubmit(e){
       e.preventDefault();
